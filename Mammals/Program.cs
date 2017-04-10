@@ -10,12 +10,12 @@ namespace Mammals
     {
         static void Main(string[] args)
         {
-            Horse horse = new Horse();
+            Horse horse = new Horse("Napoleon");
             horse.Trot();
             horse.Breathe();
             horse.SuckleYoung();
 
-            Whale whale = new Whale();
+            Whale whale = new Whale("Abalone");
             whale.Swim();
             whale.Breathe();
             whale.SuckleYoung();
@@ -32,6 +32,19 @@ namespace Mammals
                 }
                 Console.WriteLine(")");
             }
+
+            Horse myHorse = new Horse("Napoleon");
+            Mammal myMammal = myHorse;  // myMammal refers to a Horse
+            Horse myHorseAgain = myMammal as Horse;     // OK - myMammal was a Horse
+            Whale myWhale = new Whale("Abalone");
+            myMammal = myWhale;         // myMammal refers to a Whale
+            myHorseAgain = myMammal as Horse;   // returns null - myMammal was a Whale
+
+
+
+
+
+
         }
     }
 }

@@ -8,6 +8,11 @@ namespace Mammals
 {
     public class Mammal
     {
+        private string name;
+        public Mammal(string name)
+        {
+            this.name = name;
+        }
         public void Breathe()
         {
             //..................
@@ -16,16 +21,33 @@ namespace Mammals
         {
             //..................
         }
+        public void Move()
+        {
+            Console.WriteLine("Mammal moves");
+        }
     }
     public class Horse : Mammal
     {
+        public Horse(string name) : base(name)
+        {
+        }
+
         public void Trot()  // Тръс, бърз ход
         {
             //..................
         }
+        new public void Move()
+        {
+            base.Move();
+            Console.WriteLine("Horse moves");
+        }
     }
-    public sealed class Whale : Mammal
+    public class Whale : Mammal
     {
+        public Whale(string name) : base(name)
+        {
+        }
+
         public void Swim()
         {
             //..................
