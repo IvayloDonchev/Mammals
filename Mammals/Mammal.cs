@@ -25,12 +25,13 @@ namespace Mammals
         {
             Console.WriteLine("Mammal moves");
         }
+        public override string ToString() => name;
+        public virtual string GetTypeName() => "This is a mammal";
     }
     public class Horse : Mammal
     {
         public Horse(string name) : base(name)
-        {
-        }
+        {}
 
         public void Trot()  // Тръс, бърз ход
         {
@@ -41,6 +42,9 @@ namespace Mammals
             base.Move();
             Console.WriteLine("Horse moves");
         }
+        public override string ToString() => $"Horse {base.ToString()}";
+        public override string GetTypeName() => "This is a horse";
+        
     }
     public class Whale : Mammal
     {
@@ -52,5 +56,12 @@ namespace Mammals
         {
             //..................
         }
+        public override string GetTypeName() => "This is a whale";
+       
+    }
+    public class Aardvark : Mammal
+    {
+        public Aardvark(string name) : base(name)
+        { }
     }
 }
