@@ -28,7 +28,7 @@ namespace Mammals
         public override string ToString() => name;
         public virtual string GetTypeName() => "This is a mammal";
     }
-    public class Horse : Mammal
+    public class Horse : Mammal, ILandBound, IJourney, IGrazable
     {
         public Horse(string name) : base(name)
         {}
@@ -44,7 +44,12 @@ namespace Mammals
         }
         public override string ToString() => $"Horse {base.ToString()}";
         public override string GetTypeName() => "This is a horse";
-        
+        int ILandBound.NumberOfLegs() => 4;
+        int IJourney.NumberOfLegs() => 3;
+        void IGrazable.ChewGrass()
+        {
+            throw new NotImplementedException();
+        }
     }
     public class Whale : Mammal
     {

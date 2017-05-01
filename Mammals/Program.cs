@@ -49,6 +49,17 @@ namespace Mammals
             myMammal = myAardvark;
             Console.WriteLine(myMammal.GetTypeName());  // This is a mammal
 
+            ILandBound iMyHorse = myHorse;
+            Console.WriteLine(iMyHorse.NumberOfLegs());
+            Horse horseRef = null;
+            if (iMyHorse is Horse)
+            {
+                horseRef = iMyHorse as Horse;
+                Console.WriteLine(horseRef);
+            }
+            Console.WriteLine((myHorse as IJourney).NumberOfLegs());        // 3
+            Console.WriteLine((myHorse as ILandBound).NumberOfLegs());      // 4
+
 
 
         }
