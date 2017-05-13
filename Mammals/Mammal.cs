@@ -43,7 +43,7 @@ namespace Mammals
             Console.WriteLine("Horse moves");
         }
         public override string ToString() => $"Horse {base.ToString()}";
-        public override string GetTypeName() => "This is a horse";
+        public new string GetTypeName() => "This is a horse";
         int ILandBound.NumberOfLegs() => 4;
         int IJourney.NumberOfLegs() => 3;
         void IGrazable.ChewGrass()
@@ -61,7 +61,7 @@ namespace Mammals
         {
             //..................
         }
-        public override string GetTypeName() => "This is a whale";
+        public new string GetTypeName() => "This is a whale";
        
     }
     public class Aardvark : Mammal
