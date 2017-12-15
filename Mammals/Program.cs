@@ -61,7 +61,7 @@ namespace Mammals
             Console.WriteLine((myHorse as ILandBound).NumberOfLegs());      // 4
 
 
-
+            Console.ReadKey();
         }
     }
 }
